@@ -1,33 +1,34 @@
-package com.example.kitchengenie;
+package com.example.recipeandroidapp;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
+import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
-    private EditText searchBar;
-    private RecyclerView featuredRecipes;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-        // Set up RecyclerView and other components
-        setupFeaturedRecipes();
+        setContentView(R.layout.activity_main);
     }
 
-    private void setupFeaturedRecipes() {
-        // Adapter setup for RecyclerView
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        featuredRecipes.setLayoutManager(layoutManager);
-        // Create and set your adapter here
+
+    public void openLoginPage(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSignupPage(View view) {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
     }
 }
